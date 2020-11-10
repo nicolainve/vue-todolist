@@ -26,11 +26,12 @@ body {
 
 .input-box {
     position: relative;
-    width: 80%;
-    margin: 30px auto;
+    max-width: 100%;
+    margin: 30px 20px;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 0 10px;
 }
 
 .add-task {
@@ -55,13 +56,25 @@ body {
 }
 
 .tasks {
-    width: 65%;
+    max-width: 500px;
     margin: 30px auto;
+    padding: 0 20px;
+}
+
+.tasks p {
+    text-align: center;
+    font-size: 40px;
 }
 
 .tasks li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+    border-radius: 14px;
+    background: rgba(199, 195, 195, 0.521);
+    padding: 0 10px;
+    margin: 5px 0;
 }
 
 .tasks li i {

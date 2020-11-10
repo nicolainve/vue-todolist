@@ -33,7 +33,7 @@
                 </div>
 
                 <ul class="tasks">
-                    <p v-if="tasks.length === 0">Nessun attività presente</p>
+                    <p v-if="tasks.length === 0">Hai fatto tutto!</p>
                     <li v-for="(task, index) in tasks">
                         <span>{{ task }}</span>
                         <i class="fas fa-trash" @click="removeTask(index)"></i>
