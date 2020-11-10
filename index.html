@@ -19,14 +19,23 @@
             </header>
             <main>
                 <div class="input-box">
-                    <input type="text" class="add-task" placeholder="Aggiungi un'attività">
-                    <button class="btn"><i class="fas fa-plus fa-2x"></i></button>
+                    <input 
+                        type="text"
+                        class="add-task"
+                        :placeholder="[[ placeholder ]]"
+                        v-model="newTask"
+                        @keyup.enter="addTask">
+                    <button
+                        class="btn"
+                        @click="addTask">
+                        <i class="fas fa-plus fa-2x"></i>
+                    </button>
                 </div>
 
                 <ul class="tasks">
-                    <li>
-                        <span>Esempio</span>
-                        <i class="fas fa-trash"></i>
+                    <li v-for="(task, index) in tasks">
+                        <span>{{ task }}</span>
+                        <i class="fas fa-trash" @click="removeTask(index)"></i>
                     </li>
                 </ul>
             </main>
