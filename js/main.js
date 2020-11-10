@@ -11,9 +11,11 @@ const app = new Vue({
     },
     methods: {
         addTask() {
-            if (this.newTask != '') {
+            if (this.newTask != '' && !this.tasks.includes(this.newTask)) {
                 this.tasks.push(this.newTask)
                 this.newTask = ''
+            } else {
+                alert('Hai già inserito questo task')
             }
         },
         removeTask(index) {
