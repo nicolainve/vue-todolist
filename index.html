@@ -23,7 +23,7 @@
                         type="text"
                         class="add-task"
                         placeholder="Inserisci un'attività"
-                        v-model="newTask"
+                        v-model="newTask['text']"
                         @keyup.enter="addTask"
                     >
                     <button
@@ -37,7 +37,14 @@
                 <ul class="tasks">
                     <p v-if="tasks.length === 0">Hai fatto tutto!</p>
                     <li v-for="(task, index) in tasks">
-                        <span>{{ task }}</span>
+                        <span>
+                        <i
+                            class="fas fa-check"
+                            :class="task['status']"
+                            @click="checkTask(index)"
+                            >
+                        </i> {{ task['text'] }}
+                        </span>
                         <i class="fas fa-trash" @click="removeTask(index)"></i>
                     </li>
                 </ul>

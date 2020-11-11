@@ -1,16 +1,29 @@
 const app = new Vue({
     el: '#app',
     data: {
-        newTask: '',
+        newTask: {
+            text: '',
+            status: 'ready'
+        },
         tasks: [
-            'Fare la spesa',
-            'Pulire l\'auto',
-            'Comprare il regalo per Alberto',
+        {
+            text: 'Fare la spesa',
+            status: 'ready'
+        },
+        {
+            text: 'Pulire l\'auto',
+            status: 'ready'
+        },
+        {
+            text: 'Comprare il regalo per Alberto',
+            status: 'done'
+        }
         ]
     },
     methods: {
         addTask() {
-            if (this.newTask.trim() != '') {
+            if (this.newTask['text'].trim() != '') {
+
                 if (!this.tasks.includes(this.newTask)){
                     this.tasks.push(this.newTask)
                     this.newTask = ''
@@ -21,6 +34,9 @@ const app = new Vue({
         },
         removeTask(index) {
             this.tasks.splice(index, 1)
+        },
+        checkTask(index) {
+            this.tasks[index].status = (this.tasks[index].status == 'ready')  ? 'done' : 'ready';
         }
     }
 });

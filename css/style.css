@@ -7,6 +7,7 @@
 
 body {
     font-size: 16px;
+    background: #5642DF;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
 /* MAIN */
 
 .input-box {
+    background: #fff;
     position: relative;
     max-width: 100%;
     margin: 30px 20px;
@@ -73,7 +75,7 @@ body {
     align-items: center;
     line-height: 2;
     border-radius: 14px;
-    background: rgba(199, 195, 195, 0.521);
+    background: #fff;
     padding: 0 10px;
     margin: 5px 0;
 }
@@ -84,4 +86,20 @@ body {
 
 .tasks li i {
     cursor: pointer;
+}
+
+.tasks li span i {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.fas.fa-check.done {
+    color: green;
+}
+
+.tasks li span i:hover {
+    color: green;
+}
+
+.tasks li>i:hover {
+    color: red;
 }
