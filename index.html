@@ -22,12 +22,14 @@
                     <input 
                         type="text"
                         class="add-task"
-                        :placeholder="[[ placeholder ]]"
+                        placeholder="Inserisci un'attività"
                         v-model="newTask"
-                        @keyup.enter="addTask">
+                        @keyup.enter="addTask"
+                    >
                     <button
                         class="btn"
-                        @click="addTask">
+                        @click="addTask"
+                    >
                         <i class="fas fa-plus fa-2x"></i>
                     </button>
                 </div>
